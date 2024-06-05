@@ -19,15 +19,19 @@ const getDesignTokens = (mode: PaletteMode) => ({
     mode,
     primary: {
       ...amber,
-      ...(mode === 'dark' && {
+      ...(mode === 'dark' ? {
         main: amber[300],
-      }),
+      }
+      :{
+        main: amber[300],
+      }
+    ),
     },
     background: {
         ...(mode === 'light'
           ? {
-            default: blueGrey[900],
-            paper: blueGrey[800],
+            default: blueGrey[400],
+            paper: blueGrey[300],
             }
           : {
             default: blueGrey[900],

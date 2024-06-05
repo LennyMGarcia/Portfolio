@@ -17,28 +17,28 @@ const IconSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-thumb': {
     width: 24,
     height: 24,
-    backgroundImage: `url(${LightModeIcon})`,
     backgroundSize: 'cover',
   },
   '& .Mui-checked .MuiSwitch-thumb': {
-    backgroundImage: `url(${DarkModeIcon})`,
+    backgroundSize: 'cover',
   },
 }));
 
 export default function ControlledSwitches() {
-  const [checked, setChecked] = React.useState(true);
-
-  const { setThemeMode } = useThemeStore();
+  const { themeMode, setThemeMode } = useThemeStore();
+  const [checked, setChecked] = React.useState(themeMode === 'light');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
+    localStorage.setItem("isThemeChecked", String(event.target.checked));
     setChecked(isChecked);
-    setThemeMode(isChecked ? 'dark' : 'light');
+    setThemeMode(isChecked ? 'light' : 'dark');
+    window.location.reload();
   };
 
   return (
     <IconSwitch
-      checked={checked}
+      checked={localStorage.getItem("isThemeChecked") === "true" ? true : false}
       onChange={handleChange}
       inputProps={{ 'aria-label': 'controlled' }}
       icon={<DarkModeIcon/>}
@@ -46,5 +46,6 @@ export default function ControlledSwitches() {
     />
   );
 }
+
 
 

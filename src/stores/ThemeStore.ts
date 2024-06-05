@@ -1,13 +1,24 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type ThemeState = {
-    themeMode: string;
-    setThemeMode: (mode: string) => void;
-  };
+  themeMode: string;
+  setThemeMode: (mode: string) => void;
+};
 
-const useThemeStore = create<ThemeState>((set) => ({
-    themeMode: 'dark', // fixed typo: "ligth" to "light"
-    setThemeMode: (mode:string) => set({ themeMode: mode }),
-  }));
-  
-  export default useThemeStore;
+const useThemeStore = create<ThemeState>()(
+  persist(
+    (set) => ({
+      themeMode: 'dark', 
+      setThemeMode: (mode: string) => set({ themeMode: mode }),
+    }),
+    {
+      name: "theme-storage",
+      getStorage: () => localStorage, 
+    }
+  )
+);
+
+export default useThemeStore;
+
+

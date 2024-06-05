@@ -21,6 +21,7 @@ import { usePathname } from "next/navigation";
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import useThemeStore from '@/stores/ThemeStore';
 import ThemeModeSwitch from './ThemeSwitch';
+import { useTheme } from '@mui/material/styles';
 
 
 interface Props {
@@ -37,6 +38,7 @@ export default function DrawerAppBar({navItems}:{navItems:string[]}, props: Prop
 
   const router = useRouter();
   const pathname = usePathname();
+  const theme = useTheme();
 ;
 
   const handleDrawerToggle = () => {
@@ -74,7 +76,7 @@ export default function DrawerAppBar({navItems}:{navItems:string[]}, props: Prop
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" elevation={1}>
+      <AppBar component="nav" elevation={1} sx={{ backgroundColor: theme.palette.background.paper }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <IconButton
             color="inherit"
