@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import LangSwitcher from './language/LangSwitcher';
 
 interface Props {
   window?: () => Window;
@@ -32,7 +33,7 @@ export default function DrawerAppBar(props: Props) {
   };
 
   const drawer = (
-    <Box  onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography>
@@ -52,10 +53,10 @@ export default function DrawerAppBar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex', }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" elevation={1}>
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -68,17 +69,19 @@ export default function DrawerAppBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: { sm: 1, md: 0 }, display: { xs: 'none', sm: 'block' } }}
           >
             MUI
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
+          <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }, alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
                 {item}
               </Button>
             ))}
           </Box>
+          <LangSwitcher />
         </Toolbar>
       </AppBar>
       <nav>
@@ -88,11 +91,11 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
           {drawer}
@@ -100,7 +103,6 @@ export default function DrawerAppBar(props: Props) {
       </nav>
       <Box component="main" sx={{ p: 0 }}>
         <Toolbar />
-        
       </Box>
     </Box>
   );

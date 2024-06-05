@@ -1,0 +1,36 @@
+{
+  "Home": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "title": "Internationalization (i18n) in Next.js 14",
+    "intro":"React.js, Typescript y Next.js Developer",
+    "Experiences": "Experiences",
+    "Portfolio": " Portfolio",
+    "skills": "My Skills",
+    "about": "About me",
+    "AboutDescription": "I am a Junior Web application developer, specialized in Frontend development, with mastery in technologies such as React.js, Javascript, Typescript and Material UI. I have worked with several academic and personal projects, demonstrating skills for design and development of intuitive, functional and responsive interfaces. Motivated to learn and grow in a professional environment.",
+    "steps": [
+      {
+        "label": "React.js Developer",
+        "date": "2024",
+        "subtitle": "Design and development of a system for registration, consultation, monitoring and subscription of medical cases (Medilog)",
+        "description": "A system was designed and developed using Typescript, React.js Node.js, Formik, Yup, Zod, Materia UI, Zustand among other technologies. An intuitive, responsive and easy-to-use medical interface was created"
+      },
+      {
+        "label": "JavaScript Developer",
+        "date": "2024",
+        "subtitle": "Building a series of vanilla JS projects",
+        "description": "A series of VanillaJs projects were created in which there was a restaurant menu page, a rock-paper-scissors game, a countdown clock, among others."
+      },
+      {
+        "label": "React Developer",
+        "date": "2024",
+        "subtitle": "Alpaca Images Generator Website",
+        "description": "A project was created that allows you to create and download customizable alpaca images"
+      }
+    ]
+  }
+}

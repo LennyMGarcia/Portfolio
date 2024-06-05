@@ -128,6 +128,8 @@ export default function ExperiencesStepper({steps}:{steps:ISteps[]}) {
                            position: "relative",
                             width: "28px",
                             height: "20px",
+                            borderTopLeftRadius:"50%",
+                            borderBottomLeftRadius:"50%",
                             background: "#90a4ae",
                             display:"flex",
                             justifyContent:"center",
@@ -144,7 +146,7 @@ export default function ExperiencesStepper({steps}:{steps:ISteps[]}) {
                               borderLeft: "22px solid #90a4ae",  
                             },
                           }}>
-                            <Typography variant="overline" sx={{paddingLeft:"0.7rem", zIndex:"2"}}>{step.date}</Typography>
+                            <Typography variant="overline" sx={{padding:"0.2rem 0 0 0.9rem", zIndex:"2"}}>{step.date}</Typography>
                           </Box>
         
                         </Box>

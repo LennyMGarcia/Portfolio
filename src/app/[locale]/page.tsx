@@ -23,29 +23,6 @@ import { Paper, } from "@mui/material";
 import React from "react";
 import ExperiencesStepper, { ISteps } from "@/components/ExperiencesStepper";
 
-const steps: ISteps[] = [
-  {
-    label: 'Desarrollador de React.js',
-    date: "2024",
-    subtitle: "Diseño y desarrollo de un sistema de registro, consulta, seguimiento y suscripción de casos médicos (Medilog)",
-    description: `Se diseñó y desarrollo un sistema usando Typescript, React.js Node.js, Formik, Yup, Zod, Materia UI, Zustand
-    ente otras tecnologías. Se creo una interfaz medica intuitiva, responsiva y fácil de usar`,
-  },
-  {
-    label: 'Desarrollador de JavaScript',
-    date: "2024",
-    subtitle: "Construción de usa series de proyectos Vanilla JS",
-    description: `Se creó una serie de proyectos VanillaJs en los que se encontrabam una pagina de menú de restaurante
-    un juego de piedra papel o tijeras, un reloj de cuenta regresiva entre otros.`,
-  },
-  {
-    label: 'Desarrollador de React',
-    date: "2024",
-    subtitle: "Alpaca Images Generator Website",
-    description: `Se creó un un proyectos que permite crear y descargar imagenes de alpacas personalizables`,
-  },
-];
-
 
 function SkillsBox({
   img,
@@ -76,8 +53,26 @@ function SkillsBox({
 export default function Home() {
   const t = useTranslations("Home");
 
-  // Extract the navigation object keys from the translations
-  //const navigationKeys = Object.keys(t.raw("navigation"));
+  const steps: ISteps[] = [
+    {
+      label: t('steps.0.label'),
+      date: t('steps.0.date'),
+      subtitle: t('steps.0.subtitle'),
+      description: t('steps.0.description')
+    },
+    {
+      label: t('steps.1.label'),
+      date: t('steps.1.date'),
+      subtitle: t('steps.1.subtitle'),
+      description: t('steps.1.description')
+    },
+    {
+      label: t('steps.2.label'),
+      date: t('steps.2.date'),
+      subtitle: t('steps.2.subtitle'),
+      description: t('steps.2.description')
+    },
+  ];
 
   return (
     <>
@@ -86,7 +81,7 @@ export default function Home() {
           <Grid container>
             <Grid item xs={12} md={6} sx={{ marginTop: "-2rem" }}>
               <Typography variant="h4" color="primary">Lenny Garcia</Typography>
-              <Typography variant="h6" sx={{ paddingRight: " 5rem" }}>Desarrollador de React.js, Typescript y Next.js</Typography>
+              <Typography variant="h6" sx={{ paddingRight: " 5rem" }}>{t("intro")}</Typography>
             </Grid>
             <Grid item xs={12} md={6} sx={{ display: { xs: "none", md: "block" } }}>
               <img src={branchImg.src} style={{ filter: "grayscale(100%)", marginTop: "-10rem" }}></img>
@@ -96,23 +91,19 @@ export default function Home() {
 
         <Box sx={{ padding: "5rem 6vw" }}>
           <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-            Sobre mi
+            {t("about")}
           </Typography>
           <Box sx={{ display: "flex", }}>
             <HorizontalRuleIcon sx={{ fontSize: "2rem", transform: "scale(1.7, 1)", marginTop: "-0.5rem" }} color="primary" />
             <Typography variant="subtitle1" sx={{ paddingLeft: "1rem" }}>
-              Soy un desarrollador de aplicaciones Web Junior, especializado en el desarrollo
-              Frontend, con dominio en tecnologías como React.js, Javascript, Typescript y Material UI.
-              He trabajado con varios proyectos académicos y personales, demostrando habilidades para el
-              diseño y desarrollo de interfaces intuitivas, funcionales y responsivas. Motivado por aprender y
-              crecer en un entorno profesional.
+              {t("AboutDescription")}
             </Typography>
           </Box>
         </Box>
 
         <Box sx={{ width: "100vw", }}>
           <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold" }}>
-            Mis Habilidades
+            {t("skills")}
           </Typography>
           <Box sx={{
             display: "flex",
@@ -135,7 +126,7 @@ export default function Home() {
 
         <Box>
           <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold" }}>
-            Portafolio
+            {t("Portfolio")}
           </Typography>
 
           <Box sx={{
@@ -146,13 +137,13 @@ export default function Home() {
             alignItems: "center"
           }}>
 
-            <Box sx={{ borderRadius: "0.5rem",  margin: "2rem" }}>
+            <Box sx={{ borderRadius: "0.5rem", margin: "2rem" }}>
               <img src={edificio1.src} style={{ width: "20rem", height: "20rem" }}></img>
             </Box>
-            <Box sx={{ borderRadius: "0.5rem",  margin: "2rem" }}>
+            <Box sx={{ borderRadius: "0.5rem", margin: "2rem" }}>
               <img src={edificio2.src} style={{ width: "20rem", height: "20rem" }}></img>
             </Box>
-            <Box sx={{ borderRadius: "0.5rem",  margin: "2rem" }}>
+            <Box sx={{ borderRadius: "0.5rem", margin: "2rem" }}>
               <img src={edificio3.src} style={{ width: "20rem", height: "20rem" }}></img>
             </Box>
 
@@ -163,7 +154,7 @@ export default function Home() {
 
         <Box sx={{ marginTop: "5rem" }}>
           <Typography variant="h4" sx={{ fontWeight: "bold", margin: "-1.5rem 2rem" }}>
-            Experiencias
+            {t("Experiences")}
           </Typography>
           <Paper sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "5rem 12vw" }}>
             <ExperiencesStepper steps={steps} />
