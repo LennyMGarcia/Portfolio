@@ -3,6 +3,9 @@
     "navigation": {
       "home": "Home",
       "about": "About",
+      "skills":"skills",
+      "portfolio":"Portfolio",
+      "experiences":"Experiences",
       "contact": "Contact"
     },
     "title": "Internationalization (i18n) in Next.js 14",

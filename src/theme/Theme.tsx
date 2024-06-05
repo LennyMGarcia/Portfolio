@@ -6,6 +6,7 @@ import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
 import { amber, blueGrey, deepOrange, grey } from '@mui/material/colors';
 import { PaletteMode } from '@mui/material';
 import { Roboto } from 'next/font/google';
+import useThemeStore from '@/stores/ThemeStore';
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -50,7 +51,9 @@ const getDesignTokens = (mode: PaletteMode) => ({
   },
 });
 
-const ThemeMode = createTheme(getDesignTokens('dark'));
+const currentThemeMode = useThemeStore.getState().themeMode as PaletteMode;
+
+const ThemeMode = createTheme(getDesignTokens(`${currentThemeMode}`));
 
 export default ThemeMode;
 

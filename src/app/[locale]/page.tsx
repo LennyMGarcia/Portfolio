@@ -76,7 +76,7 @@ export default function Home() {
 
   return (
     <>
-      <Box sx={{ width: "100vw", maxWidth: "100vw", overflowX: "hidden" }}>
+      <Box id={t("navigation.home")} sx={{ width: "100vw", maxWidth: "100vw", overflowX: "hidden" }}>
         <Paper sx={{ height: "50vh", padding: "6rem", overflow: "hidden" }}>
           <Grid container>
             <Grid item xs={12} md={6} sx={{ marginTop: "-2rem" }}>
@@ -89,7 +89,7 @@ export default function Home() {
           </Grid>
         </Paper>
 
-        <Box sx={{ padding: "5rem 6vw" }}>
+        <Box id={t("navigation.about")} sx={{ padding: "5rem 6vw" }}>
           <Typography variant="h4" sx={{ fontWeight: "bold" }}>
             {t("about")}
           </Typography>
@@ -101,7 +101,7 @@ export default function Home() {
           </Box>
         </Box>
 
-        <Box sx={{ width: "100vw", }}>
+        <Box id={t("navigation.skills")} sx={{ width: "100vw", }}>
           <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold" }}>
             {t("skills")}
           </Typography>
@@ -124,7 +124,7 @@ export default function Home() {
           </Box>
         </Box>
 
-        <Box>
+        <Box id={t("navigation.portfolio")}>
           <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold" }}>
             {t("Portfolio")}
           </Typography>
@@ -152,7 +152,7 @@ export default function Home() {
 
         </Box>
 
-        <Box sx={{ marginTop: "5rem" }}>
+        <Box id={t("navigation.experiences")} sx={{ marginTop: "5rem" }}>
           <Typography variant="h4" sx={{ fontWeight: "bold", margin: "-1.5rem 2rem" }}>
             {t("Experiences")}
           </Typography>

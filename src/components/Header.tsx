@@ -16,21 +16,40 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import LangSwitcher from './language/LangSwitcher';
+import { useRouter } from 'next/navigation';
+import { usePathname } from "next/navigation";
+import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
+import useThemeStore from '@/stores/ThemeStore';
+import ThemeModeSwitch from './ThemeSwitch';
+
 
 interface Props {
   window?: () => Window;
 }
 
-const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
 
-export default function DrawerAppBar(props: Props) {
-  const { window } = props;
+const drawerWidth = 240;
+
+
+export default function DrawerAppBar({navItems}:{navItems:string[]}, props: Props, ) {
+  const { window, } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
+;
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const handleLinkClick = (link:string) => {
+    router.push(`${pathname}#${link}`);
+  };
+
+  const handleChangeTheme = () => {
+      
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -41,8 +60,8 @@ export default function DrawerAppBar(props: Props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+            <ListItemButton sx={{ textAlign: 'center' }} >
+              <Button type='button' onClick={() => handleLinkClick(item)}>{item}</Button>
             </ListItemButton>
           </ListItem>
         ))}
@@ -71,17 +90,18 @@ export default function DrawerAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: { sm: 1, md: 0 }, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            <ImportantDevicesIcon color='primary' sx={{fontSize:"2rem"}}/>
           </Typography>
 
           <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }, alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button type="button" key={item} sx={{ color: '#fff' }} onClick={() => handleLinkClick(item)}> 
                 {item}
               </Button>
             ))}
           </Box>
           <LangSwitcher />
+          <ThemeModeSwitch/>
         </Toolbar>
       </AppBar>
       <nav>
