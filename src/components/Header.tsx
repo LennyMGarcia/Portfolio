@@ -52,9 +52,9 @@ export default function DrawerAppBar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" elevation={1}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -92,13 +92,13 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, },
           }}
         >
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 0 }}>
         <Toolbar />
         
       </Box>
