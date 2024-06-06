@@ -22,6 +22,10 @@ import { Paper, useTheme, } from "@mui/material";
 import React from "react";
 import ExperiencesStepper, { ISteps } from "@/components/ExperiencesStepper";
 import SkillsBox from "@/components/SkillsBox";
+import ContactMeBox from "@/components/ContactMeBox";
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 
 export default function Home() {
@@ -126,19 +130,83 @@ export default function Home() {
 
         </Box>
 
-        <Box id={t("navigation.experiences")} sx={{ marginTop: "5rem" }}>
-          <Typography variant="h4" sx={{ fontWeight: "bold", margin: "-1.5rem 2rem" }}>
+        <Box id={t("navigation.experiences")} sx={{ marginTop: "5rem", }}>
+          <Typography variant="h4" sx={{ fontWeight: "bold", margin: "-1.5rem 2rem", }}>
             {t("Experiences")}
           </Typography>
-          <Paper sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "5rem 12vw" }}>
+          <Paper sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "5rem 12vw", paddingBottom:"10rem" }}>
             <ExperiencesStepper steps={steps} />
           </Paper>
         </Box>
 
+        <Box  id={t("navigation.skills")} sx={{ width: "100vw", }}>
+          <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold", marginTop:"-1rem" }}>
+            {t("skills")}
+          </Typography>
 
-        <Box>
+          <Box sx={{
+            marginTop:"-1.8rem",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            position: 'relative',
+            padding: '0 1rem',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              left: '0',
+              width: 'calc(50% - 10rem)',
+              height: '0.3rem',
+              backgroundColor: '#ffd54f',
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              right: '0',
+              width: 'calc(50% - 10rem)',
+              height: '0.3rem',
+              backgroundColor: '#ffd54f',
+            },
+          }}/>
 
+          <Box sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingTop:"2rem"
+          }}>
+            <ContactMeBox icon={<EmailIcon/>} text="Lennymgr27@gmail.com"/>
+            <ContactMeBox icon={<LocalPhoneIcon/>} text="+1 (829)-657-2014"/>
+            <ContactMeBox icon={<LocationOnIcon/>} text="Santo Domingo Este, RD."/>
+          </Box>
+
+          <Box sx={{
+            marginTop:"1.8rem",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            position: 'relative',
+            padding: '0 1rem',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              left: '0',
+              width: 'calc(50% - 10rem)',
+              height: '0.3rem',
+              backgroundColor: '#ffd54f',
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              right: '0',
+              width: 'calc(50% - 10rem)',
+              height: '0.3rem',
+              backgroundColor: '#ffd54f',
+            },
+          }}/>
         </Box>
+
       </Box>
 
     </>
