@@ -38,6 +38,16 @@ const getDesignTokens = (mode: PaletteMode) => ({
             paper: blueGrey[800],
             }),
       },
+      action: {
+        ...(mode === 'light'
+          ? {
+            hover: amber[300],
+
+            }
+          : {
+            hover: amber[300],
+            }),
+      },
     text: {
       ...(mode === 'light'
         ? {

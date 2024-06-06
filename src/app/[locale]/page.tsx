@@ -18,36 +18,10 @@ import edificio2 from "../../../public/edificio2.webp"
 import edificio3 from "../../../public/edificio3.jpg"
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import Typography from "@mui/material/Typography";
-
-import { Paper, } from "@mui/material";
+import { Paper, useTheme, } from "@mui/material";
 import React from "react";
 import ExperiencesStepper, { ISteps } from "@/components/ExperiencesStepper";
-
-
-function SkillsBox({
-  img,
-  text
-}: {
-  img: string,
-  text: string,
-}
-) {
-  return (
-    <Paper sx={{
-      borderRadius: "0.5rem",
-      margin: "2rem",
-      width: "15rem",
-      height: "15rem",
-      display: "grid",
-      gap: "0",
-      justifyContent: "center",
-      alignItems: "center"
-    }}>
-      <img src={img} style={{ width: "7rem", height: "7rem" }}></img>
-      <Typography sx={{ color: "#fff", textAlign: "center", marginTop: "-2rem" }} variant="subtitle2">{text}</Typography>
-    </Paper>
-  )
-}
+import SkillsBox from "@/components/SkillsBox";
 
 
 export default function Home() {

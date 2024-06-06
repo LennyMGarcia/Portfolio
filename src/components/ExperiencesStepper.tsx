@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import StepContent from "@mui/material/StepContent";
 import Typography from "@mui/material/Typography";
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -85,35 +85,8 @@ export interface ISteps {
 }
 
 
-const steps: ISteps[] = [
-  {
-    label: 'Select campaign settings',
-    date:"2024",
-    subtitle:"",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
-  },
-  {
-    label: 'Select campaign settings',
-    date:"2024",
-    subtitle:"",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
-  },
-  {
-    label: 'Select campaign settings',
-    date:"2024",
-    subtitle:"",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
-  },
-];
-
-
 export default function ExperiencesStepper({steps}:{steps:ISteps[]}) {
+  const theme = useTheme()
   return (
     <Box sx={{}}>
       <Stepper orientation="vertical" connector={<QontoConnector />}>
@@ -130,7 +103,7 @@ export default function ExperiencesStepper({steps}:{steps:ISteps[]}) {
                             height: "20px",
                             borderTopLeftRadius:"50%",
                             borderBottomLeftRadius:"50%",
-                            background: "#90a4ae",
+                            background: theme.palette.background.default,
                             display:"flex",
                             justifyContent:"center",
                             alignItems:"center",
@@ -143,7 +116,7 @@ export default function ExperiencesStepper({steps}:{steps:ISteps[]}) {
                               height: "0",
                               borderTop: "10px solid transparent",
                               borderBottom: "10px solid transparent",
-                              borderLeft: "22px solid #90a4ae",  
+                              borderLeft: `22px solid ${theme.palette.background.default}`,  
                             },
                           }}>
                             <Typography variant="overline" sx={{padding:"0.2rem 0 0 0.9rem", zIndex:"2"}}>{step.date}</Typography>
