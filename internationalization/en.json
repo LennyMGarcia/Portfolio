@@ -9,11 +9,13 @@
       "contact": "Contact"
     },
     "title": "Lenny Garcia's portfolio",
+    "footerThanks":"Thanks For Watching",
     "intro":"React.js, Typescript y Next.js Developer",
     "Experiences": "Experiences",
     "Portfolio": " Portfolio",
     "skills": "My Skills",
     "about": "About me",
+    "contact":"Contact me",
     "AboutDescription": "I am a Junior Web application developer, specialized in Frontend development, with mastery in technologies such as React.js, Javascript, Typescript and Material UI. I have worked with several academic and personal projects, demonstrating skills for design and development of intuitive, functional and responsive interfaces. Motivated to learn and grow in a professional environment.",
     "steps": [
       {

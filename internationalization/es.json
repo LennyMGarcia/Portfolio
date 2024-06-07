@@ -9,11 +9,13 @@
         "contact": "Contacto"
       },
       "title": "Portafolio de Lenny Garcia",
+      "footerThanks":"Gracias por ver",
       "intro":"Desarrollador de React.js, Typescript y Next.js",
       "Experiences":"Experiencias",
       "Portfolio":" Portafolio",
       "skills":"Mis Habilidades",
       "about":"Sobre mi",
+      "contact":"Contactame",
       "AboutDescription": "Soy un desarrollador de aplicaciones Web Junior, especializado en el desarrollo Frontend, con dominio en tecnologías como React.js, Javascript, Typescript y Material UI. He trabajado con varios proyectos académicos y personales, demostrando habilidades para el diseño y desarrollo de interfaces intuitivas, funcionales y responsivas. Motivado por aprender y crecer en un entorno profesional.",
       "steps":  [
         {

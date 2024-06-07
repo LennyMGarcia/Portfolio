@@ -36,7 +36,7 @@ export default function RootLayout({
             <CssBaseline/>
           <Header  navItems={navItems}/>
             {children}
-          <Footer/>
+          <Footer message={t("footerThanks")}/>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

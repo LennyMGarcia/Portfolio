@@ -54,7 +54,7 @@ export default function DrawerAppBar({navItems}:{navItems:string[]}, props: Prop
   }
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box component={"header"} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography>
@@ -74,7 +74,7 @@ export default function DrawerAppBar({navItems}:{navItems:string[]}, props: Prop
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box component={"header"} sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" elevation={1} sx={{ backgroundColor: theme.palette.background.paper }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
